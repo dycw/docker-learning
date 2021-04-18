@@ -13,10 +13,9 @@ ENV PATH="${PATH}:/root/.poetry/bin"
 
 # WORKDIR /usr/src/app
 WORKDIR /myapp
-COPY ./app ./app
-COPY pyproject.toml .
+COPY . .
 RUN poetry config virtualenvs.create false \
-  && poetry install --no-interaction --no-ansi
+  && poetry install --no-ansi --no-interaction
 
 # run entrypoint.sh
 # ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
