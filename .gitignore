@@ -1,5 +1,8 @@
 # editor
+.venv/
 .vim/
 
-# environment
-.venv/
+# project
+*.pyc
+.mypy_cache/
+__pycache__/
