@@ -1,6 +1,6 @@
 # https://stackoverflow.com/a/61751745
 
-FROM python3.9:slim
+FROM python:slim
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
