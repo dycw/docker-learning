@@ -1,8 +1,9 @@
-import random
+from random import randrange  # noqa: DUO102
 
-import requests
 from bs4 import BeautifulSoup
 from bs4.element import Tag
+from loguru import logger
+from requests import get
 
 # crawl IMDB Top 250 and randomly select a movie
 
@@ -11,7 +12,7 @@ URL = "http://www.imdb.com/chart/top"
 
 
 def main() -> None:
-    response = requests.get(URL)
+    response = get(URL)
 
     soup = BeautifulSoup(response.text, "lxml")  # faster
 
@@ -32,15 +33,20 @@ def main() -> None:
     n_movies = len(titles)
 
     while True:
-        idx = random.randrange(0, n_movies)  # noqa: DUO102, S311
+        idx = randrange(0, n_movies)  # noqa: DUO102, S311
 
         logger.info(
-            f"{titles[idx]} {years[idx]}, Rating: {ratings[idx]:.1f}, Starring: {actors_list[idx]}"
+            f"{titles[idx]} {years[idx]}, Rating: {ratings[idx]:.1f}, "
+            f"Starring: {actors_list[idx]}"
         )
 
-        user_input = input("Do you want another movie (y/[n])? ")
-        if user_input != "y":
+        if True:
             break
+
+        else:
+            user_input = input("Do you want another movie (y/[n])? ")
+            if user_input != "y":
+                break
 
 
 if __name__ == "__main__":
