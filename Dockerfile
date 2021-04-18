@@ -7,8 +7,9 @@ ENV PYTHONUNBUFFERED 1
 
 RUN pip install -U pip \
   && apt-get update \
-  && apt install -y curl netcat \
+  && apt install -y curl git netcat \
   && curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+# need git because of https://github.com/python-poetry/poetry/pull/2105
 ENV PATH="${PATH}:/root/.poetry/bin"
 
 # WORKDIR /usr/src/app

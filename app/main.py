@@ -17,4 +17,4 @@ def read_item(item_id: int, q: Optional[str] = None) -> dict[str, Any]:
 
 
 if __name__ == "__main__":
-    run(app)
+    run(app, host="0.0.0.0", port=8000)  # noqa: S104
