@@ -39,13 +39,9 @@ def main() -> None:
             f"Starring: {actors_list[idx]}"
         )
 
-        if True:
+        user_input = input("Do you want another movie (y/[n])? ")
+        if user_input != "y":
             break
-
-        else:
-            user_input = input("Do you want another movie (y/[n])? ")
-            if user_input != "y":
-                break
 
 
 if __name__ == "__main__":
