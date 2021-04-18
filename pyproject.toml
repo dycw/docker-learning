@@ -12,10 +12,10 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-requests = "^2.25.1"
-beautifulsoup4 = "^4.9.3"
-lxml = "^4.6.3"
-loguru = "^0.5.3"
+beautifulsoup4 = "^4.9"
+loguru = "^0.5"
+lxml = "^4.6"
+requests = "^2.25"
 
 [tool.poetry.dev-dependencies]
 pre-commit = "^2"
