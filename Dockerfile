@@ -12,10 +12,11 @@ RUN pip install -U pip \
 ENV PATH="${PATH}:/root/.poetry/bin"
 
 # WORKDIR /usr/src/app
+WORKDIR /myapp
 COPY . .
 RUN poetry config virtualenvs.create false \
   && poetry install --no-interaction --no-ansi
 
 # run entrypoint.sh
 # ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
-CMD [ "python", "./main.py" ]
+CMD [ "python", "./app/main.py" ]
