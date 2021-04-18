@@ -13,7 +13,8 @@ ENV PATH="${PATH}:/root/.poetry/bin"
 
 # WORKDIR /usr/src/app
 WORKDIR /myapp
-COPY . .
+COPY ./app ./app
+COPY pyproject.toml .
 RUN poetry config virtualenvs.create false \
   && poetry install --no-interaction --no-ansi
 
